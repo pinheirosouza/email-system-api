@@ -5,7 +5,11 @@ module.exports = mailService = {
     return mailModel.create(mail);
   },
   find(mail) {
-    return mailModel.find(mail).populate("sentBy").populate("receivedBy");
+    return mailModel
+      .find(mail)
+      .populate("sentBy")
+      .populate("receivedBy")
+      .sort({ createdAt: -1 });
   },
   findOne(mail) {
     return mailModel.findOne(mail);
