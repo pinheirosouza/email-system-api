@@ -11,7 +11,7 @@ const userController = {
     const { body } = req;
     const schema = {
       email: "required|email",
-      password: "required|min:6",
+      password: "required",
       name: "required",
     };
     const validator = new Validator(body, schema);
@@ -68,7 +68,7 @@ const userController = {
     const { body } = req;
     const schema = {
       email: "required|email",
-      password: "required|min:6",
+      password: "required",
     };
     const validator = new Validator(body, schema);
     const bodyIsValid = validator.check();
